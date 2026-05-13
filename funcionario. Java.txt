@@ -1,0 +1,25 @@
+package cadastro;
+
+public class Funcionario extends Pessoa {
+    private double salario;
+
+    public Funcionario(String nome, int idade, String cpf, double salario) {
+        super(nome, idade, cpf);
+        this.salario = salario;
+    }
+
+    public double getSalario() { return salario; }
+    public void setSalario(double salario) { this.salario = salario; }
+
+    @Override
+    public void exibirDados() {
+        System.out.println("=== Funcionário ===");
+        System.out.println("Nome: " + getNome());
+        System.out.println("Idade: " + getIdade());
+        System.out.println("CPF: " + getCpf());
+        System.out.println("Salário: R$ " + salario);
+    }
+}
+  
+
+Funcionário Java (herança + Poliformismo)

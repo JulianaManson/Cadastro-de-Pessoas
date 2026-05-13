@@ -1,0 +1,17 @@
+package cadastro;
+
+public class Main {
+    public static void main(String[] args) {
+
+        CadastroPessoas cadastro = new CadastroPessoas();
+
+        Cliente c1 = new Cliente("Ana Silva", 28, "123.456.789-00", "ana@email.com");
+        Funcionario f1 = new Funcionario("Carlos Souza", 35, "987.654.321-00", 3500.00);
+
+        cadastro.adicionarPessoa(c1);
+        cadastro.adicionarPessoa(f1);
+
+        cadastro.listarPessoas();
+    }
+}
+ Main.Java (Execução do Sistema)
