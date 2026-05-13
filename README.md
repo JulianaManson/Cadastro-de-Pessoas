@@ -1,2 +1,8 @@
-# Cadastro-de-Pessoas
-Sistema de Cadastro de Pessoas
+
+sistema-cadastro/
+│
+├── src/
+│   └── SistemaCadastro.java
+│
+├── README.md
+└── .gitignore
