@@ -1,23 +1,43 @@
 package cadastro;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
-public class CadastroPessoas {
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        CadastroPessoas cadastro = new CadastroPessoas();
 
-    private List<Pessoa> pessoas = new ArrayList<>();
+        System.out.println("Digite o nome do cliente:");
+        String nomeCliente = sc.nextLine();
+        System.out.println("Digite a idade do cliente:");
+        int idadeCliente = sc.nextInt();
+        sc.nextLine(); // consumir quebra de linha
+        Cliente c1 = new Cliente(nomeCliente, idadeCliente);
 
-    public void adicionarPessoa(Pessoa pessoa) {
-        pessoas.add(pessoa);
-    }
+        System.out.println("Digite o nome do funcionário:");
+        String nomeFuncionario = sc.nextLine();
+        System.out.println("Digite a idade do funcionário:");
+        int idadeFuncionario = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Digite o setor do funcionário:");
+        String setorFuncionario = sc.nextLine();
+        Funcionario f1 = new Funcionario(nomeFuncionario, idadeFuncionario, setorFuncionario);
 
-    public void listarPessoas() {
-        for (Pessoa p : pessoas) {
-            p.exibirDados(); // Polimorfismo em ação
-            System.out.println();
+        cadastro.adicionarPessoa(c1);
+        cadastro.adicionarPessoa(f1);
+
+        System.out.println("\n--- Lista de Pessoas ---");
+        cadastro.listarPessoas();
+
+        System.out.println("\nDigite um nome para buscar:");
+        String busca = sc.nextLine();
+        Pessoa encontrada = cadastro.buscarPessoa(busca);
+        if (encontrada != null) {
+            System.out.println("Pessoa encontrada: " + encontrada);
+        } else {
+            System.out.println("Pessoa não encontrada.");
         }
+
+        sc.close();
     }
 }
-
-
-Cadastro de pessoas (gerenciamento de objetos)
